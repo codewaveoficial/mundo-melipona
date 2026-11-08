@@ -27,6 +27,7 @@ const reviewMunicipalities: Record<string, string> = {
   'Melipona mondury':'Anchieta, Barra de São Francisco (Córrego do Ita), Cariacica, Colatina, Conceição da Barra, Domingos Martins, Guarapari, Itarana, Linhares, Santa Leopoldina, Santa Teresa (São João de Petrópolis), São Domingos do Norte, São Mateus, São Roque do Canaã, Sooretama e Viana',
   'Melipona quadrifasciata':'Domingos Martins e Santa Teresa',
   'Plebeia droryana':'Conceição da Barra (Parque Estadual de Itaúnas)',
+  'Tetragonisca angustula':'Santa Teresa e Domingos Martins',
   'Plebeia lucii':'Linhares, Conceição da Barra e Sooretama',
   'Plebeia phrynostoma':'Venda Nova do Imigrante, Domingos Martins e Santa Teresa',
   'Plebeia poecilochroa':'Guarapari, Linhares, Conceição da Barra e Sooretama',
