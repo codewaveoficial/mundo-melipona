@@ -10,7 +10,7 @@ const coreSources: Source[] = [
 
 // Use Vite's base path in the browser; sitemap generation imports this data in Node.
 const photoBase = typeof window === 'undefined' ? '/' : import.meta.env.BASE_URL
-const localPhoto = (filename: string) => `${photoBase}images/${filename}`
+const localPhoto = (filename: string) => `${photoBase}images/${filename}?v=2`
 const jataiPhoto = localPhoto('jatai.jpg')
 const jataiSource: Source = { name: 'Abelhas do PEPAZ', organization: 'IEMA', url: 'https://iema.es.gov.br/Media/iema/Unidades%20de%20Conserva%C3%A7%C3%A3o/Abelhas%20do%20PEPAZ%20%282%29_compressed.pdf', note: 'Material educativo estadual que inclui a espécie Jataí.' }
 const plantStudy: Source = { name: 'Plantas cultivadas visitadas por Tetragonisca angustula em Santa Maria de Jetibá', organization: 'Brazilian Journal of Development (2020)', url: 'https://doi.org/10.34117/bjdv6n11-292', note: 'Estudo de uma propriedade de horticultura orgânica; dados locais e observacionais, não um calendário universal.' }
