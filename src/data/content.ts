@@ -1,7 +1,7 @@
 import type { Species, Plant, Article, JournalEntry, LearningGuide, Source } from '../types'
 
 const coreSources: Source[] = [
-  { name: 'Abelhas sem ferrão do Espírito Santo', organization: 'Incaper em Revista, v. 15', url: 'https://www.revista.incaper.es.gov.br/index.php/ojs/article/view/43', note: 'Revisão estadual com distribuição municipal, nomes populares, descrições e nidificação.' },
+  { name: 'Abelhas sem ferrão do Espírito Santo', organization: 'Incaper em Revista, v. 15 (2024)', url: 'https://doi.org/10.54682/ier.v.15.p106.123', note: 'Revisão estadual com distribuição municipal, nomes populares, descrições e nidificação.' },
   { name: 'Meliponicultura no Espírito Santo', organization: 'IEMA', url: 'https://iema.es.gov.br/meliponicultura', note: 'Informações estaduais sobre conservação e manejo.' },
   { name: 'Autorização de manejo de fauna — meliponicultura', organization: 'IEMA', url: 'https://iema.es.gov.br/autorizacao-de-manejo-de-fauna-meliponicultura', note: 'Orientação administrativa estadual; consultar a página vigente antes de qualquer manejo.' },
   { name: 'Resolução CONAMA nº 496/2020', organization: 'CONAMA / MMA', url: 'https://conama.mma.gov.br/index.php?id=724&option=com_sisconama&view=atonormativo', note: 'Uso e manejo sustentáveis de abelhas nativas sem ferrão.' },
@@ -16,16 +16,36 @@ const jataiSource: Source = { name: 'Abelhas do PEPAZ', organization: 'IEMA', ur
 const plantStudy: Source = { name: 'Plantas cultivadas visitadas por Tetragonisca angustula em Santa Maria de Jetibá', organization: 'Brazilian Journal of Development (2020)', url: 'https://doi.org/10.34117/bjdv6n11-292', note: 'Estudo de uma propriedade de horticultura orgânica; dados locais e observacionais, não um calendário universal.' }
 export const sources = [...coreSources, plantStudy, { name: 'Pollen sources used by Melipona capixaba', organization: 'Serra et al. (2013), PMC', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3646618/', note: 'Estudo de cargas polínicas em localidades do Espírito Santo; não equivale a uma lista de plantas recomendadas.' }]
 const reviewMunicipalities: Record<string, string> = {
+  'Frieseomelitta dispar':'Baixo Guandu, Conceição da Barra, Itaguaçu, Colatina (Itapina), Linhares e São Roque do Canaã',
+  'Frieseomelitta meadewaldoi':'Fundão, Guarapari, Serra (Jacaraípe e Nova Almeida), Santa Teresa, Colatina e São Roque do Canaã',
+  'Lestrimelitta ehrhardti':'Colatina e Conceição da Barra',
+  'Lestrimelitta rufipes':'Santa Teresa e Linhares',
+  'Melipona bicolor':'Domingos Martins e Santa Teresa',
   'Melipona capixaba':'Santa Maria de Jetibá, Domingos Martins, Marechal Floriano, Alfredo Chaves, Vargem Alta, Castelo, Venda Nova do Imigrante, Conceição do Castelo, Brejetuba e Afonso Cláudio',
-  'Melipona mondury':'Anchieta, Cariacica, Colatina, Conceição da Barra, Domingos Martins, Guarapari, Itarana, Linhares, Santa Leopoldina, Santa Teresa, São Domingos do Norte, São Mateus, Sooretama e Viana',
+  'Melipona fuliginosa':'Sooretama e Domingos Martins',
+  'Melipona marginata':'Domingos Martins, Linhares, Santa Teresa e Sooretama',
+  'Melipona mondury':'Anchieta, Barra de São Francisco (Córrego do Ita), Cariacica, Colatina, Conceição da Barra, Domingos Martins, Guarapari, Itarana, Linhares, Santa Leopoldina, Santa Teresa (São João de Petrópolis), São Domingos do Norte, São Mateus, São Roque do Canaã, Sooretama e Viana',
   'Melipona quadrifasciata':'Domingos Martins e Santa Teresa',
-  'Tetragonisca angustula':'Santa Teresa e Domingos Martins',
   'Plebeia droryana':'Conceição da Barra (Parque Estadual de Itaúnas)',
+  'Plebeia lucii':'Linhares, Conceição da Barra e Sooretama',
+  'Plebeia phrynostoma':'Venda Nova do Imigrante, Domingos Martins e Santa Teresa',
+  'Plebeia poecilochroa':'Guarapari, Linhares, Conceição da Barra e Sooretama',
+  'Plebeia remota':'Santa Teresa',
   'Scaptotrigona postica':'Alfredo Chaves, Iconha, Linhares, Pancas, Santa Teresa e Sooretama',
-  'Trigona spinipes':'Registros em diversos municípios capixabas; ver revisão estadual'
+  'Scaura atlantica':'Conceição da Barra e São Roque do Canaã',
+  'Schwarziana quadripunctata':'Santa Teresa',
+  'Tetragona clavipes':'Santa Teresa',
+  'Trigona branneri':'Sooretama (Reserva Natural Vale; registro localizado)',
+  'Trigona braueri':'Santa Teresa e Sooretama',
+  'Trigona hyalinata':'Santa Teresa, Linhares e Sooretama',
+  'Trigona recursa':'Sooretama (Reserva Natural Vale; registro localizado e com ressalva taxonômica)',
+  'Trigona spinipes':'Afonso Cláudio, Baixo Guandu, Campina Verde, Conceição da Barra, Domingos Martins, Fundão, Guarapari, Itarana, Linhares, Santa Maria, Santa Teresa, São João de Petrópolis, São Mateus, Serra, Nova Almeida, Sooretama e Viana',
 }
-const popularNames: Record<string,string> = { 'Frieseomelitta meadewaldoi':'Moça-branca','Lestrimelitta ehrhardti':'Abelha-limão','Lestrimelitta rufipes':'Iraxim','Leurotrigona muelleri':'Lambe-olhos','Melipona bicolor':'Guaraipo','Melipona capixaba':'Uruçu-capixaba','Melipona marginata':'Manduri','Melipona mondury':'Uruçu-amarela','Melipona quadrifasciata':'Mandaçaia','Melipona quinquefasciata':'Mandaçaia-do-chão','Nannotrigona testaceicornis':'Iraí','Oxytrigona cagafogo':'Caga-fogo','Paratrigona subnuda':'Mirim-sem-brilho','Partamona helleri':'Cupira','Plebeia droryana':'Mirim-mosquito','Plebeia phrynostoma':'Boca-de-sapo','Plebeia remota':'Mirim-guaçu','Scaptotrigona bipunctata':'Tubuna','Scaptotrigona postica':'Mandaguari-amarela','Schwarziana quadripunctata':'Guiruçu','Tetragona clavipes':'Borá','Tetragonisca angustula':'Jataí','Trigona branneri':'Guaxupé','Trigona braueri':'Mel-de-cachorro','Trigona hyalinata':'Xupé','Trigona spinipes':'Arapuá'}
+const popularNames: Record<string,string> = { 'Cephalotrigona capitata':'Mombução (papa-terra)','Friesella schrottkyi':'Mirim-preguiça','Frieseomelitta meadewaldoi':'Moça-branca','Lestrimelitta ehrhardti':'Abelha-limão','Lestrimelitta rufipes':'Iraxim','Leurotrigona muelleri':'Lambe-olhos','Melipona bicolor':'Guaraipo','Melipona capixaba':'Uruçu-capixaba','Melipona fuliginosa':'Uruçu-boi','Melipona marginata':'Manduri','Melipona mondury':'Uruçu-amarela','Melipona quadrifasciata':'Mandaçaia','Melipona quinquefasciata':'Mandaçaia-do-chão','Nannotrigona testaceicornis':'Iraí','Oxytrigona cagafogo':'Caga-fogo','Paratrigona subnuda':'Mirim-sem-brilho','Partamona helleri':'Cupira','Plebeia droryana':'Mirim-mosquito','Plebeia phrynostoma':'Boca-de-sapo','Plebeia remota':'Mirim-guaçu','Scaptotrigona bipunctata':'Tubuna','Scaptotrigona postica':'Mandaguari-amarela','Schwarziana quadripunctata':'Abelha-do-chão','Tetragona clavipes':'Borá','Tetragonisca angustula':'Jataí','Trigona branneri':'Guaxupé','Trigona braueri':'Mel-de-cachorro','Trigona hyalinata':'Xupé','Trigona spinipes':'Arapuá'}
 const naturalHistory: Record<string,string> = {
+ 'Cephalotrigona capitata':'A revisão descreve uma abelha de porte médio (cerca de 8,6 mm), castanho-escura, que nidifica em ocos de árvores. A entrada é uma pequena saliência de pouso; os favos de cria são horizontais e protegidos por invólucro.',
+ 'Frieseomelitta dispar':'Espécie brasileira com registros no Espírito Santo. A revisão descreve tamanho em torno de 5 mm e nidificação em árvores; ressalta que um registro antigo de F. varia em Santa Teresa pode corresponder a F. dispar, devido à semelhança entre elas.',
+ 'Friesella schrottkyi':'A lista estadual registra os nomes mirim-preguiça e mosquito-remela. A ficha fica limitada ao registro taxonômico estadual enquanto uma descrição regional detalhada e imagem licenciada são validadas.',
  'Frieseomelitta meadewaldoi':'A revisão registra nomes como moça-branca, caveca e perna-longa. Descreve ninho em madeira seca ou verde, com entrada pequena e escura.',
  'Lestrimelitta ehrhardti':'Abelha cleptobiótica conhecida como abelha-limão; a revisão descreve ninhos com favos horizontais e invólucro.',
  'Lestrimelitta rufipes':'A revisão registra a espécie em Santa Teresa e Linhares e cita os nomes limão e iraxim.',
@@ -46,7 +66,7 @@ const naturalHistory: Record<string,string> = {
  'Partamona sooretamae':'Espécie descrita a partir da região; a revisão apresenta registros em diversos municípios, mas informa que o ninho é desconhecido.',
  'Plebeia droryana':'Mirim-mosquito, pequena e dócil; a revisão cita registro no Parque Estadual de Itaúnas e entradas de ninho em cerume.',
  'Plebeia lucii':'A revisão apresenta registros em Linhares, Conceição da Barra e Sooretama; não consolida nome popular para a espécie.',
- 'Plebeia meridionalis':'A revisão a inclui para o Espírito Santo e ressalta debate taxonômico sobre possível sinonímia com P. nigriceps.',
+ 'Plebeia meridionalis':'A revisão a inclui para o Espírito Santo e ressalta debate taxonômico: autores sugerem que possa ser sinônimo júnior de P. nigriceps, mas a tratam como válida na publicação.',
  'Plebeia phrynostoma':'Boca-de-sapo; a fonte descreve uma entrada de ninho em fenda transversal e registros em municípios serranos.',
  'Plebeia poecilochroa':'A revisão menciona registros em municípios do litoral e norte capixaba e entrada de ninho com resina.',
  'Plebeia remota':'Mirim-guaçu ou preguiçosa; a revisão descreve ninhos em cavidades e registros em Santa Teresa.',
@@ -78,7 +98,7 @@ export const species: Species[] = orderedTaxa.map((scientificName) => {
   const photo = photoByTaxon[scientificName]
   const municipalities = reviewMunicipalities[scientificName]?.split(', ') ?? []
   const caution = ['Melipona fuliginosa','Partamona ailyae','Scaptotrigona bipunctata','Scaptotrigona silviae','Trigona branneri','Trigona recursa','Plebeia meridionalis'].includes(scientificName)
-  return { slug: scientificName.toLowerCase().replaceAll(' ','-'), commonName, scientificName, genus, family:'Apidae', region:'Sudeste', states:['ES'], status:'documentado', image:photo?.url ?? '', imageAlt:photo ? `${commonName} (${scientificName}), identificação indicada na fonte da imagem` : '', imageCredit:photo?.credit, imageSourceUrl:photo?.sourceUrl, shortDescription:`Registro para o Espírito Santo incluído na revisão estadual de abelhas sem ferrão. ${municipalities.length ? `Localidades citadas: ${municipalities.join('; ')}.` : 'A revisão consultada não detalha município nesta ficha.'}`, ecology:naturalHistory[scientificName]??'A revisão estadual inclui este táxon na lista de abelhas sem ferrão do Espírito Santo. O nome popular não foi consolidado nesta ficha; consulte a fonte para detalhes de ocorrência, identificação e história natural.', sources:[sources[0], ...(scientificName==='Tetragonisca angustula'?[jataiSource]:[])], curious:scientificName==='Melipona capixaba'?'É uma espécie endêmica das áreas serranas do Espírito Santo e associada a ambientes de altitude; a conservação de seu habitat é central.':scientificName==='Melipona mondury'?'A revisão chama atenção para a correção de registros antigos de Melipona rufiventris no Sudeste, atribuídos à M. mondury.':'Nomes populares e registros podem variar entre localidades; a identificação segura depende de características diagnósticas e contexto.', municipalities, evidenceNote:caution?'Registro ou taxonomia requerem leitura contextual da revisão; confirmar literatura atual e localidade antes de inferir ocorrência atual.':'Ocorrência estadual reportada na revisão do Incaper; localidade municipal só indicada quando detalhada acima.' }
+  return { slug: scientificName.toLowerCase().replaceAll(' ','-'), commonName, scientificName, genus, family:'Apidae', region:'Sudeste', states:['ES'], status:'documentado', image:photo?.url ?? '', imageAlt:photo ? `${commonName} (${scientificName}), identificação indicada na fonte da imagem` : '', imageCredit:photo?.credit, imageSourceUrl:photo?.sourceUrl, shortDescription:`Espécie incluída na revisão de Meliponini do Espírito Santo. ${municipalities.length ? `Localidades citadas: ${municipalities.join('; ')}.` : 'A publicação consultada não detalha municípios para esta espécie.'}`, ecology:naturalHistory[scientificName]??'A publicação revisa este táxon entre os registros bibliográficos do Espírito Santo, mas não oferece nesta ficha uma síntese de história natural que possamos reproduzir com segurança. Consulte a referência e considere as lacunas de amostragem e atualização taxonômica.', sources:[sources[0], sources[1], ...(scientificName==='Tetragonisca angustula'?[jataiSource]:[])], curious:scientificName==='Melipona capixaba'?'É uma espécie endêmica das montanhas do Espírito Santo, associada a florestas de altitude; a publicação relaciona sua conservação à proteção dessas populações naturais.':scientificName==='Melipona mondury'?'A revisão explica que registros antigos de Melipona rufiventris no Sudeste foram revistos após diferenciação morfológica das populações de Mata Atlântica, tratadas como M. mondury.':'Nomes populares podem variar entre localidades; a identificação segura depende de caracteres diagnósticos e de contexto, não apenas da aparência geral.', municipalities, evidenceNote:caution?'Registro localizado, histórico ou com discussão taxonômica: a presença bibliográfica não comprova ocupação atual. Consulte a revisão e estudos posteriores antes de inferir ocorrência atual.':'Registro bibliográfico reportado na revisão do Incaper (2024); município só aparece quando documentado na tabela desta ficha. A revisão também aponta lacunas de inventário no estado.' }
 })
 
 const observedPlants: [string,string,string][] = [
@@ -112,3 +132,4 @@ export const featuredArticle: Article = {
   slug: 'jardins-polinizadores', title: 'Um jardim que floresce em diferentes épocas', category: 'Plantas para abelhas', excerpt: 'A diversidade de plantas pode oferecer recursos em diferentes épocas. O planejamento precisa levar em conta o território.', readTime: '4 min', status: 'publicado',
   body: 'Abelhas visitam flores em busca de recursos como néctar e pólen. Um planejamento que considera variedade de plantas e épocas de floração pode ajudar a manter recursos disponíveis no ambiente. A escolha de espécies, no entanto, depende do clima, solo e ecossistema local.\n\nComece observando quais plantas florescem perto de você e registre as épocas. Consulte listas regionais e dê preferência a orientações de instituições locais. Calendários não são universais: use apenas referências compatíveis com a sua região.\n\nO Mundo Melípona está começando o levantamento para o Espírito Santo. As fichas serão completadas à medida que houver referências verificáveis.', sources: [sources[4]]
 }
+
