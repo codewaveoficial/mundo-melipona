@@ -8,7 +8,8 @@ const coreSources: Source[] = [
   { name: 'Abelhas e sistemas agroflorestais', organization: 'Embrapa', url: 'https://www.atermaisdigital.cnptia.embrapa.br/web/saf/abelhas-e-safs', note: 'Interações de abelhas com plantas e recursos florais.' },
 ]
 
-const localPhoto = (filename: string) => `${import.meta.env.BASE_URL}images/${filename}`
+// Relative to the deployed site root; HashRouter keeps this path stable on GitHub Pages.
+const localPhoto = (filename: string) => `./images/${filename}`
 const jataiPhoto = localPhoto('jatai.jpg')
 const jataiSource: Source = { name: 'Abelhas do PEPAZ', organization: 'IEMA', url: 'https://iema.es.gov.br/Media/iema/Unidades%20de%20Conserva%C3%A7%C3%A3o/Abelhas%20do%20PEPAZ%20%282%29_compressed.pdf', note: 'Material educativo estadual que inclui a espécie Jataí.' }
 const plantStudy: Source = { name: 'Plantas cultivadas visitadas por Tetragonisca angustula em Santa Maria de Jetibá', organization: 'Brazilian Journal of Development (2020)', url: 'https://doi.org/10.34117/bjdv6n11-292', note: 'Estudo de uma propriedade de horticultura orgânica; dados locais e observacionais, não um calendário universal.' }
