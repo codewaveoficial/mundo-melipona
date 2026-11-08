@@ -64,13 +64,15 @@ const naturalHistory: Record<string,string> = {
  'Trigonisca intermedia':'A revisão inclui a espécie para o Espírito Santo e descreve abelhas muito pequenas; nome popular varia e a ficha não presume comportamento não documentado.'
 }
 const taxa = ['Cephalotrigona capitata','Friesella schrottkyi','Frieseomelitta dispar','Frieseomelitta meadewaldoi','Lestrimelitta ehrhardti','Lestrimelitta rufipes','Leurotrigona muelleri','Melipona bicolor','Melipona capixaba','Melipona fuliginosa','Melipona marginata','Melipona mondury','Melipona quadrifasciata','Melipona quinquefasciata','Nannotrigona testaceicornis','Oxytrigona cagafogo','Paratrigona subnuda','Partamona ailyae','Partamona criptica','Partamona helleri','Partamona sooretamae','Plebeia droryana','Plebeia lucii','Plebeia meridionalis','Plebeia phrynostoma','Plebeia poecilochroa','Plebeia remota','Scaptotrigona bipunctata','Scaptotrigona postica','Scaptotrigona silviae','Scaura atlantica','Schwarziana quadripunctata','Tetragona clavipes','Tetragonisca angustula','Trigona branneri','Trigona braueri','Trigona hyalinata','Trigona recursa','Trigona spinipes','Trigonisca intermedia']
+const featuredTaxa = ['Tetragonisca angustula','Melipona capixaba','Plebeia droryana']
+const orderedTaxa = [...featuredTaxa, ...taxa.filter(name => !featuredTaxa.includes(name))]
 const photoByTaxon: Record<string,{url:string;credit:string;sourceUrl:string}> = {
  'Cephalotrigona capitata':{url:localPhoto('cephalotrigona-capitata.jpg'),credit:'Pietro · CC BY 4.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Cephalotrigona_capitata.jpg'},
  'Tetragonisca angustula':{url:jataiPhoto,credit:'Carlos Eduardo Joos · CC BY 2.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Tetragonisca_angustula_(Jata%C3%AD)_(51826346548).jpg'},
  'Melipona capixaba':{url:localPhoto('melipona-capixaba.jpg'),credit:'Josemar de Carvalho Ramos · CC BY-SA 4.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Melipona_capixaba.jpg'},
  'Plebeia droryana':{url:localPhoto('plebeia-droryana.jpg'),credit:'Bruno Henrique Aranda · CC BY 4.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Plebeia_droryana007.jpg'}
 }
-export const species: Species[] = taxa.map((scientificName) => {
+export const species: Species[] = orderedTaxa.map((scientificName) => {
   const genus = scientificName.split(' ')[0], commonName = popularNames[scientificName] ?? 'Nome popular não consolidado'
   const photo = photoByTaxon[scientificName]
   const municipalities = reviewMunicipalities[scientificName]?.split(', ') ?? []
